@@ -7,14 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F5DCE8B218337740012A6A4 /* BookLibraryDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F5DCE8A218337740012A6A4 /* BookLibraryDelegate.swift */; };
+		1F5DCE8D218359050012A6A4 /* EditDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F5DCE8C218359050012A6A4 /* EditDelegate.swift */; };
+		1F78651E21822FFA0078DA96 /* DetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F78651D21822FFA0078DA96 /* DetailTableViewCell.swift */; };
+		1F786520218231280078DA96 /* BookTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F78651F218231280078DA96 /* BookTableViewCell.swift */; };
 		1F80BB7C217E02C900FFAF85 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F80BB7B217E02C900FFAF85 /* AppDelegate.swift */; };
 		1F80BB7E217E02C900FFAF85 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F80BB7D217E02C900FFAF85 /* ViewController.swift */; };
 		1F80BB81217E02C900FFAF85 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F80BB7F217E02C900FFAF85 /* Main.storyboard */; };
 		1F80BB83217E02CC00FFAF85 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F80BB82217E02CC00FFAF85 /* Assets.xcassets */; };
 		1F80BB86217E02CC00FFAF85 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F80BB84217E02CC00FFAF85 /* LaunchScreen.storyboard */; };
+		1F80BB8F217E030D00FFAF85 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F80BB8E217E030D00FFAF85 /* Book.swift */; };
+		1F80BB91217E031700FFAF85 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F80BB90217E031700FFAF85 /* User.swift */; };
+		1F80BB94217E039E00FFAF85 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F80BB93217E039E00FFAF85 /* LogInViewController.swift */; };
+		1F80BB96217E03B500FFAF85 /* LibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F80BB95217E03B500FFAF85 /* LibraryViewController.swift */; };
+		1F80BB9A217E0E6000FFAF85 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F80BB99217E0E6000FFAF85 /* DetailViewController.swift */; };
+		1F80BB9C217E0F8E00FFAF85 /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F80BB9B217E0F8E00FFAF85 /* EditViewController.swift */; };
+		1F93DD65218201BE00A06665 /* BookLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F93DD64218201BE00A06665 /* BookLibrary.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1F5DCE8A218337740012A6A4 /* BookLibraryDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookLibraryDelegate.swift; sourceTree = "<group>"; };
+		1F5DCE8C218359050012A6A4 /* EditDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditDelegate.swift; sourceTree = "<group>"; };
+		1F78651D21822FFA0078DA96 /* DetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableViewCell.swift; sourceTree = "<group>"; };
+		1F78651F218231280078DA96 /* BookTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookTableViewCell.swift; sourceTree = "<group>"; };
 		1F80BB78217E02C900FFAF85 /* QuanLyThuVien.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuanLyThuVien.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F80BB7B217E02C900FFAF85 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1F80BB7D217E02C900FFAF85 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +37,13 @@
 		1F80BB82217E02CC00FFAF85 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1F80BB85217E02CC00FFAF85 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1F80BB87217E02CC00FFAF85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1F80BB8E217E030D00FFAF85 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
+		1F80BB90217E031700FFAF85 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		1F80BB93217E039E00FFAF85 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
+		1F80BB95217E03B500FFAF85 /* LibraryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryViewController.swift; sourceTree = "<group>"; };
+		1F80BB99217E0E6000FFAF85 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		1F80BB9B217E0F8E00FFAF85 /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
+		1F93DD64218201BE00A06665 /* BookLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookLibrary.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +57,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1F5DCE89218337140012A6A4 /* delegate */ = {
+			isa = PBXGroup;
+			children = (
+				1F5DCE8A218337740012A6A4 /* BookLibraryDelegate.swift */,
+				1F5DCE8C218359050012A6A4 /* EditDelegate.swift */,
+			);
+			path = delegate;
+			sourceTree = "<group>";
+		};
+		1F78651A21822FAB0078DA96 /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				1F78651D21822FFA0078DA96 /* DetailTableViewCell.swift */,
+				1F78651F218231280078DA96 /* BookTableViewCell.swift */,
+			);
+			path = cell;
+			sourceTree = "<group>";
+		};
 		1F80BB6F217E02C800FFAF85 = {
 			isa = PBXGroup;
 			children = (
@@ -54,6 +94,11 @@
 		1F80BB7A217E02C900FFAF85 /* QuanLyThuVien */ = {
 			isa = PBXGroup;
 			children = (
+				1F5DCE89218337140012A6A4 /* delegate */,
+				1F78651A21822FAB0078DA96 /* cell */,
+				1F93DD632182008700A06665 /* singleton */,
+				1F80BB92217E038100FFAF85 /* controller */,
+				1F80BB8D217E02FB00FFAF85 /* model */,
 				1F80BB7B217E02C900FFAF85 /* AppDelegate.swift */,
 				1F80BB7D217E02C900FFAF85 /* ViewController.swift */,
 				1F80BB7F217E02C900FFAF85 /* Main.storyboard */,
@@ -62,6 +107,34 @@
 				1F80BB87217E02CC00FFAF85 /* Info.plist */,
 			);
 			path = QuanLyThuVien;
+			sourceTree = "<group>";
+		};
+		1F80BB8D217E02FB00FFAF85 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				1F80BB8E217E030D00FFAF85 /* Book.swift */,
+				1F80BB90217E031700FFAF85 /* User.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		1F80BB92217E038100FFAF85 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				1F80BB93217E039E00FFAF85 /* LogInViewController.swift */,
+				1F80BB95217E03B500FFAF85 /* LibraryViewController.swift */,
+				1F80BB99217E0E6000FFAF85 /* DetailViewController.swift */,
+				1F80BB9B217E0F8E00FFAF85 /* EditViewController.swift */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		1F93DD632182008700A06665 /* singleton */ = {
+			isa = PBXGroup;
+			children = (
+				1F93DD64218201BE00A06665 /* BookLibrary.swift */,
+			);
+			path = singleton;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,8 +208,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F80BB9C217E0F8E00FFAF85 /* EditViewController.swift in Sources */,
+				1F93DD65218201BE00A06665 /* BookLibrary.swift in Sources */,
+				1F80BB96217E03B500FFAF85 /* LibraryViewController.swift in Sources */,
+				1F786520218231280078DA96 /* BookTableViewCell.swift in Sources */,
+				1F80BB91217E031700FFAF85 /* User.swift in Sources */,
 				1F80BB7E217E02C900FFAF85 /* ViewController.swift in Sources */,
 				1F80BB7C217E02C900FFAF85 /* AppDelegate.swift in Sources */,
+				1F80BB94217E039E00FFAF85 /* LogInViewController.swift in Sources */,
+				1F5DCE8D218359050012A6A4 /* EditDelegate.swift in Sources */,
+				1F80BB8F217E030D00FFAF85 /* Book.swift in Sources */,
+				1F78651E21822FFA0078DA96 /* DetailTableViewCell.swift in Sources */,
+				1F80BB9A217E0E6000FFAF85 /* DetailViewController.swift in Sources */,
+				1F5DCE8B218337740012A6A4 /* BookLibraryDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
