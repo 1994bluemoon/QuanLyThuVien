@@ -31,21 +31,34 @@ class EditViewController: UIViewController {
         createBook()
         if  checkAll() {
             if isEdit {
-                bookLibraryDelegate?.updateLib(book: book, fDelete: false)
+                NotificationCenter.default.post(name: .modifyBook, object: book)
                 editDelegate?.sendBackEdited(book: book)
             } else {
-                bookLibraryDelegate?.addBook(book: book)
+                NotificationCenter.default.post(name: .addBook, object: book)
             }
             self.navigationController?.popViewController(animated: true)
         }
     }
     @IBAction func btDeleteClicked(_ sender: Any) {
-        bookLibraryDelegate?.updateLib(book: book, fDelete: true)
-        self.navigationController?.popViewController(animated: false)
-        editDelegate?.sendBackEdited(book: Book())
+        NotificationCenter.default.post(name: .deleteBook, object: book)
+        let index = getLibVCPos()
+        if index != -1 {
+            let vc = self.navigationController?.viewControllers[index] as! LibraryViewController
+            self.navigationController?.popToViewController(vc, animated: true)
+        }
     }
     
-    func createBook() {
+    private func getLibVCPos() -> Int {
+        guard let vcs  = self.navigationController?.viewControllers else { return -1 }
+        for (index, vc) in vcs.enumerated() {
+            if let _ = vc as? LibraryViewController {
+                return index
+            }
+        }
+        return -1
+    }
+    
+    private func createBook() {
         book.subject = edtSubject.text ?? ""
         book.author  = edtAuthor.text ?? ""
         book.des     = edtDes.text ?? ""

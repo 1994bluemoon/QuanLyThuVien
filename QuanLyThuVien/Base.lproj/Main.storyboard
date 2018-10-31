@@ -159,9 +159,9 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="5nT-m7-OFy"/>
                                 </connections>
                             </tableView>
-                            <searchBar contentMode="redraw" searchBarStyle="prominent" placeholder="Search book in library" translatesAutoresizingMaskIntoConstraints="NO" id="GNG-eM-Kmm">
+                            <searchBar contentMode="redraw" searchBarStyle="prominent" placeholder="Search book in library" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GNG-eM-Kmm">
                                 <rect key="frame" x="0.0" y="64" width="375" height="56"/>
-                                <textInputTraits key="textInputTraits" returnKeyType="go" enablesReturnKeyAutomatically="YES" smartInsertDeleteType="yes"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="search" enablesReturnKeyAutomatically="YES" smartInsertDeleteType="yes"/>
                                 <scopeButtonTitles>
                                     <string>Title</string>
                                     <string>Title</string>
@@ -421,7 +421,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="0Lw-wU-mnE"/>
+        <segue reference="Feq-9K-6zH"/>
         <segue reference="qiB-jY-Kij"/>
     </inferredMetricsTieBreakers>
 </document>

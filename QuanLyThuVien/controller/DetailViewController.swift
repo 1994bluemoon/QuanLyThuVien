@@ -12,26 +12,35 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var tbTable: UITableView!
     @IBOutlet weak var btEdit: UIBarButtonItem!
     
-    weak var bookLibraryDelegate: BookLibraryDelegate?
     var book = Book()
     var user = User()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        NotificationCenter.default.addObserver(self, selector: #selector(self.updateData(_:)), name: .modifyBook, object: nil)
+        
         doFirst()
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: .modifyBook, object: nil)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "pushdetailtoedit" {
             let mh = segue.destination as! EditViewController
-            mh.bookLibraryDelegate = bookLibraryDelegate
-            mh.editDelegate = self
             mh.book = sender as! Book
         }
     }
     
     @IBAction func btEditClicked(_ sender: Any) {
         performSegue(withIdentifier: "pushdetailtoedit", sender: book)
+    }
+    
+    @objc private func updateData(_ notification: Notification) {
+        guard let book = notification.object as? Book else { return }
+        self.book = book
+        tbTable.reloadData()
     }
     
     func doFirst() {
@@ -50,16 +59,5 @@ extension DetailViewController : UITableViewDataSource {
         }
         cell.setData(book: book, index: indexPath.row)
         return cell
-    }
-}
-
-extension DetailViewController : EditDelegate {
-    func sendBackEdited(book: Book)  {
-        self.book = book
-        if book.isbn.isEmpty {
-            self.navigationController?.popViewController(animated: true)
-        } else {
-            tbTable.reloadData()
-        }
     }
 }
