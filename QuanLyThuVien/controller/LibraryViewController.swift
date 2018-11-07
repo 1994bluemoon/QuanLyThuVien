@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class LibraryViewController: UIViewController {
     @IBOutlet weak var searchBar: UISearchBar!
@@ -15,7 +16,8 @@ class LibraryViewController: UIViewController {
     @IBOutlet weak var tbTable: UITableView!
     
     var user: User = User()
-    var books = [Book]()
+    var books: [Book] = []
+    var bookLibrary = [BookLibrary]()
     var searchList = [Book]()
 
     override func viewDidLoad() {
@@ -67,16 +69,45 @@ class LibraryViewController: UIViewController {
     }
     
     @objc func addBook(_ notification: Notification) {
-        guard let book = notification.object as? Book else { return }
-        if !isContains(book: book, inList: books) {
-            books.append(book)
+        guard let book = notification.object as? BookLibrary else { return }
+        //if !isContains(book: book, inList: books) {
+        //    books.append(book)
+        //    reloadData()
+        //}
+        bookLibrary.append(book)
+        BLibrary.share.saveContext()
+        reloadData()
+    }
+    
+    private func loadCoreData(){
+        let fetchRequest = NSFetchRequest<BookLibrary>(entityName: "Library")
+        do {
+            bookLibrary = try BLibrary.share.persistentContainer.viewContext.fetch(fetchRequest).map{$0}
             reloadData()
+            
+        } catch let error as NSError {
+            print("Could not fetch. \(error), \(error.userInfo)")
         }
     }
     
     private func reloadData() {
-        searchList = books
+        searchList = convert(bookLibs: bookLibrary)
         tbTable.reloadData()
+    }
+    
+    private func convert(bookLibs: [BookLibrary]) -> [Book]{
+        var books = [Book]()
+        for item in bookLibs {
+            let book = Book()
+            book.isbn = item.isbn ?? ""
+            book.author = item.author ?? ""
+            //book.date = item.date ?? ""
+            //book.pages = item.pages ?? ""
+            book.coppies = item.coppies ?? ""
+            book.subject = item.subject ?? ""
+            books.append(book)
+        }
+        return books
     }
     
     private func getItemIndex(book: Book, inList: [Book]) -> Int{

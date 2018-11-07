@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class EditViewController: UIViewController {
 
@@ -20,7 +21,8 @@ class EditViewController: UIViewController {
     weak var bookLibraryDelegate: BookLibraryDelegate?
     weak var editDelegate: EditDelegate?
     
-    var book = Book()
+    var book: Book = Book()
+    var bookLib = NSEntityDescription.insertNewObject(forEntityName: "BookLibrary", into: BLibrary.share.persistentContainer.viewContext) as! BookLibrary
     var isEdit = false
     
     override func viewDidLoad() {
@@ -34,7 +36,7 @@ class EditViewController: UIViewController {
                 NotificationCenter.default.post(name: .modifyBook, object: book)
                 editDelegate?.sendBackEdited(book: book)
             } else {
-                NotificationCenter.default.post(name: .addBook, object: book)
+                NotificationCenter.default.post(name: .addBook, object: bookLib)
             }
             self.navigationController?.popViewController(animated: true)
         }
@@ -59,12 +61,12 @@ class EditViewController: UIViewController {
     }
     
     private func createBook() {
-        book.subject = edtSubject.text ?? ""
-        book.author  = edtAuthor.text ?? ""
-        book.des     = edtDes.text ?? ""
-        book.pages   = edtPages.text ?? ""
-        book.coppies = edtCopies.text ?? ""
-        book.date = ""
+        bookLib.subject = edtSubject.text ?? ""
+        bookLib.author  = edtAuthor.text ?? ""
+        bookLib.des     = edtDes.text ?? ""
+        bookLib.pages   = Int16(edtPages.text ?? "0") ?? 0
+        bookLib.coppies = edtCopies.text ?? ""
+        bookLib.date = Date()
         if !isEdit {
             book.isbn = String(Date().timeIntervalSince1970)
         }
